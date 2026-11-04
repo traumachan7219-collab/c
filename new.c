@@ -5,33 +5,15 @@
 #include <time.h>
 
 int main(){
-    srand(time(NULL));
-
-    int guess = 0;
-    int tries = 0;
-    int min = 1;
-    int max = 100;
-    int answer = (rand() % (max-min+1))+min;
-
-    printf("***NUMBER GUESSING GAME***\n");
-    do {
-        printf("ENTER NUMBER BETWEEN %d-%d: ",min,max);
-        scanf("%d",&guess);
-        tries += 1;
-        if (guess>answer) {
-            printf("TOO HIGH\n");
+    int numbers[]={3,1,4,1,5,9,2,6,5,3};
+    char name[] ="😊";
+    int size = sizeof(name)/sizeof(name[0]);
+    for (int i=0;i<6;i++) {
+        for(int j=0;j<6;j++){
+            printf("(%s)",name);
         }
-        else if (guess<answer) {
-            printf("TOO LOW\n");
-        }
-        else {
-            printf("CORRECT\n");
-        }
-    
-    }while (guess!=answer);
-    printf("THE ANSWER IS %d\n",answer);
-    printf("IT TOOK YOU %d TRIES",tries);
-    
+        printf("\n");
+    }
 
     return 0;
 }
